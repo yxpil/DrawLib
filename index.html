@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="4lmBSGVvcZ2e7HA8OaQNrz">
+<head data-page-node-id="U0SFHuQgwiQxQw2iGN2bkC">
+<meta charset="utf-8" data-page-node-id="quD6iUrqi0MwZoSDDDMDoQ">
+<meta name="viewport" content="width=device-width,initial-scale=1" data-page-node-id="LVOCCc6GeZBzqkGD6jCgZP">
+<title>DrawLib · 绘画工作室</title>
+<link rel="stylesheet" href="css/style.css" data-page-node-id="MHziXw2D1Dil9Q9H7LSgAC">
+</head>
+<body data-page-node-id="lzq7OwPEJFpUkQt1LaMnmF">
+<div id="app" data-page-node-id="zGs9oo1LznupEns6yufk4n">
+
+  <nav class="menubar" id="menubar" data-page-node-id="KkXNclD4uFYHo0jXZKFqmG"></nav>
+
+  <header class="topbar" data-page-node-id="0RCX5tKOxQ5DeEjGdw5bqB">
+    <div class="brand" data-page-node-id="gZxyt9aQLk0MShyrdPDvTR"><span class="logo" data-page-node-id="C9kTixaLLI5dtMxLwIS2Tl"></span>DrawLib</div>
+
+    <div class="group" data-page-node-id="XB7RWZbjvf3rthRATLtsOd">
+      <button class="btn" id="btn-new" title="新建文件 (Ctrl+N)" data-page-node-id="aA19et3ZQzmXGy9HcKzJrT">新建</button>
+      <button class="btn" id="btn-open" title="打开图片并编辑 (Ctrl+O)" data-page-node-id="KA3pg6aPHOFy3PPBbb0lNU">打开图片</button>
+      <button class="btn primary" id="btn-save" title="导出 PNG (Ctrl+S)" data-page-node-id="6GzrgS97fJNPwp5mZHsup4">保存 PNG</button>
+      <input type="file" id="file-input" accept="image/*" hidden data-page-node-id="lVwus5izZTgM2eQXoHhaXs">
+    </div>
+
+    <div class="divider" data-page-node-id="99javDbY6MT4XzwXlzdSsA"></div>
+
+    <div class="group" data-page-node-id="POtRttXiMClAvWcaYXN1Kg">
+      <button class="btn" id="btn-fx-gallery" title="打开滤镜库（120 个滤镜与调整）" data-page-node-id="DeHej7csMJEktRRQF4qD9Q">滤镜库</button>
+      <button class="btn" id="btn-fx-repeat" title="重复上一次滤镜 (Ctrl+F)" data-page-node-id="b9YY27ReTacOIoCAsCAfCO">重复滤镜</button>
+    </div>
+
+    <div class="divider" data-page-node-id="i05pavFbmMD5IwWMDccQvB"></div>
+
+    <div class="group" data-page-node-id="AW66DXg0pwoZJwsqAcpovZ">
+      <button class="btn icon" id="btn-undo" title="上一步 (Ctrl+Z)" data-page-node-id="B4RinE3EOtyysWoGFvQdkB">
+        <svg viewBox="0 0 24 24" data-page-node-id="XrzBnUBJSflViBLbSOnT5K"><path d="M9 14 4 9l5-5" data-page-node-id="JM5jDxdX7B5wYm1XFzKR8B"/><path d="M4 9h10a6 6 0 0 1 0 12h-3" data-page-node-id="7R74HJA9JI8w5HYc9yvPm3"/></svg>
+        <span data-page-node-id="FUD6koivETFCaSTnV0baxY">上一步</span>
+      </button>
+      <button class="btn icon" id="btn-redo" title="下一步 (Ctrl+Shift+Z)" data-page-node-id="nUBNaTs5nWpvZYFZU7gG6l">
+        <svg viewBox="0 0 24 24" data-page-node-id="d2a3ItxswQ6lEvuu18gpQy"><path d="m15 14 5-5-5-5" data-page-node-id="FO6puhqYL6Es6j91N2WW6C"/><path d="M20 9H10a6 6 0 0 0 0 12h3" data-page-node-id="zmCFPSBgHOjzM2I6uxTbpv"/></svg>
+        <span data-page-node-id="pbnxU6Ym4CbszGM9fumaLI">下一步</span>
+      </button>
+    </div>
+
+    <div class="spacer" data-page-node-id="Z408wFxo8qUFec6XE6sYZD"></div>
+
+    <div class="group" data-page-node-id="iNhG7SNy9jeArGsDn8HnZj">
+      <button class="btn icon sm" id="btn-zoom-out" title="缩小" data-page-node-id="OVa9jUBe7A9FrxdHQfAyc4">−</button>
+      <button class="btn zoom-label" id="btn-zoom-reset" title="重置为 100%" data-page-node-id="2mA61cD3HQ1o6XDha2Q8ie">100%</button>
+      <button class="btn icon sm" id="btn-zoom-in" title="放大" data-page-node-id="b69Qx18QOoWhMX6Qo9cLgz">+</button>
+      <button class="btn" id="btn-fit" title="适合窗口 (Ctrl+0)" data-page-node-id="HUheRzVtj5gyh4GkSJfeKj">适合窗口</button>
+      <label class="chk-inline" title="显示网格" data-page-node-id="13bwokJLvvLe92crPh1gqq"><input type="checkbox" id="chk-grid" data-page-node-id="HiDHhGXOgXodiob5sNKGjX"><span data-page-node-id="yZwTxUxCHMDuJgoKPTa3Gg">网格</span></label>
+    </div>
+  </header>
+
+  <main data-page-node-id="XEvlamYGmqtkgZ3Ikuu7PZ">
+    <aside class="toolbar" id="toolbar" data-page-node-id="E6q8xE1tikZqs0QD6FYMmK"></aside>
+
+    <section class="stage" id="stage" data-page-node-id="EXtxuHxe7Jv6zEoQdlRybB">
+      <canvas id="view" data-page-node-id="A5ExB5pwyC9B2JPXZtjb3k"></canvas>
+      <canvas id="overlay" data-page-node-id="ptlTlB1C6AOTv6FndCB5cb"></canvas>
+      <div id="cursor-ring" hidden data-page-node-id="G1GgRLwDUBNiW9YGIhpcqR"></div>
+      <div class="sel-bar" id="sel-bar" hidden data-page-node-id="qdZDepNZYlLNFzghVmqEqM">
+        <span class="sel-tag" data-page-node-id="RZjZVAFYJhsN6XAEv6vvTH">选区</span>
+        <button class="btn xs" data-act="move" data-page-node-id="roWQY3nVckwcnV9b0PjjSy">移动</button>
+        <button class="btn xs" data-act="fill" data-page-node-id="0YCHlk2A1Utiyigmr5tU2t">填充</button>
+        <button class="btn xs" data-act="copy" data-page-node-id="TQ342dNlGy17kstjUI1inV">分离到新图层</button>
+        <button class="btn xs" data-act="cut" data-page-node-id="kB7bytMqTgBVJATZASFfpq">剪切到新图层</button>
+        <button class="btn xs" data-act="crop" data-page-node-id="JFY8DVFh2i5aQBETr6dKKB">裁剪到选区</button>
+        <button class="btn xs" data-act="invert" data-page-node-id="IbNpO5N38auu2juq2RyRV2">反选</button>
+        <button class="btn xs danger" data-act="delete" data-page-node-id="59a18CCNBKE6gxwgMYCVRQ">删除</button>
+        <button class="btn xs" data-act="clear" data-page-node-id="eg9AQ7qiV3iLULwwaPZOzq">取消选区</button>
+      </div>
+      <div class="sel-bar crop-bar" id="crop-bar" hidden data-page-node-id="ymgvMFYcEuCU6td4Aa6qLT">
+        <span class="sel-tag" data-page-node-id="EFtq8UK0BWv1mzCwUixY5d">裁剪</span>
+        <span class="crop-size" id="crop-size" data-page-node-id="At9MsmlaKSDQhiAMXUXV8t">0 × 0</span>
+        <button class="btn xs primary" data-act="apply" data-page-node-id="y7gweUWpT6QMiudTL0JAQ9">应用裁剪</button>
+        <button class="btn xs" data-act="sel" data-page-node-id="LIrFx6hJGYIlU9H4T3aMIB">裁剪到选区</button>
+        <button class="btn xs" data-act="cancel" data-page-node-id="WQ7eOk18LXxNIawjFjeihp">取消</button>
+      </div>
+      <div class="stage-hint" id="stage-hint" data-page-node-id="2w0bTRfUPOXe9YiJwBvmRR">滚轮缩放 · 中键/空格拖动平移 · Alt 取色 · 触屏双指缩放、三指橡皮</div>
+    </section>
+
+    <aside class="panels" data-page-node-id="rx48CGKKB25wJGAovJuAIS">
+
+      <section class="panel" data-page-node-id="53bFF8e6326atgY2GteCgv">
+        <h3 data-page-node-id="hsJbTWVXdD7NhHlSAudKsB">颜色 <span class="hint-text" data-page-node-id="Zt83czpAyi8wCPaSC6dFEI">前景 / 背景</span></h3>
+        <div class="picker-wrap" data-page-node-id="xbz5U9fgjcaAPMyh1tgDA5">
+          <div class="swatch-rail" data-page-node-id="YOBjKrZ9t34c0h3uBmnCvH">
+            <button class="big-swatch fg" id="swap-fg" title="前景色（点击打开系统取色器）" data-page-node-id="7klGUXpO6Tc3BSPj2lkBc7"></button>
+            <button class="big-swatch bg" id="swap-bg" title="背景色（点击打开系统取色器）" data-page-node-id="zM5GDB8JpYLWSgvR9KnHzH"></button>
+            <button class="swap-btn" id="btn-swap" title="交换前景/背景 (X)" data-page-node-id="8Nxd6ZCCMFXdFxwxIDbLl2">⇄</button>
+          </div>
+          <div class="picker" data-page-node-id="6Dp4YG4HxC3vBQ6fnb71W8">
+            <canvas id="sv-canvas" width="180" height="100" data-page-node-id="MDuOqiXZB5Caogi4c5fZcR"></canvas>
+            <canvas id="hue-canvas" width="180" height="12" data-page-node-id="ECU34nYZN8G9NZ40lKlmHr"></canvas>
+          </div>
+        </div>
+        <div class="row" data-page-node-id="LJngI738b9OAhlBnaVuSeK">
+          <label data-page-node-id="wVMalexwgPg3H2nL1oQEaz">HEX</label>
+          <input id="hex-input" class="text" spellcheck="false" value="#1A1A1A" data-page-node-id="XKpHvwaYrWHzYAGJ6DTVtt">
+        </div>
+        <input type="color" id="native-color" class="native-color" value="#1a1a1a" data-page-node-id="4cDwf5Jb0Tbx9tO0Rm6r8j">
+        <div class="sect-title" data-page-node-id="ZCWcdaX2ohbLWLQykKcKPQ">常用色板</div>
+        <div class="palette" id="palette" data-page-node-id="9i7QJfidA6jVFao6xj2YSm"></div>
+        <div class="sect-title" data-page-node-id="mEK5gpO8QCaiBYLE4dUuDb">画面色板 · <button class="link-btn" id="btn-extract" data-page-node-id="0Qj14BVEVUNTmFk3I9OmTY">从画面提取</button></div>
+        <div class="palette" id="extracted" data-page-node-id="CzF4RX6T8zrGQCwAM96tBs"></div>
+        <div class="sect-title" data-page-node-id="4k2i2mvQVVWMp8dD7Cmp45">最近使用 · <button class="link-btn" id="btn-clear-recent" data-page-node-id="8AxHYVyDSAub1YSBtu45vo">清空</button></div>
+        <div class="palette" id="recent" data-page-node-id="Pc2EhuEut9VkXhcUjp7HDz"></div>
+      </section>
+
+      <section class="panel" data-page-node-id="kb2XUoU3EEyUUMyPWV9znQ">
+        <h3 data-page-node-id="pAuMONe6Xl61YlkEqOwaxh">笔刷</h3>
+        <div class="brush-grid" id="brush-types" data-page-node-id="oTRAQEjAJ9gUvEFbwhFW1p"></div>
+        <div class="field" data-page-node-id="NDf5CJhUE1lTTiTFEOYwRn"><label data-page-node-id="EoIpvmjKAa6OhRbxRiMgwC">大小</label><input type="range" id="s-size" min="1" max="400" value="24" data-page-node-id="SnT9W5XZx5v8F4Vv50CTBN"><span class="val" id="s-size-val" data-page-node-id="NJF2XuxJKuXHPLdP6SDDxL">24px</span></div>
+        <div class="field" data-page-node-id="KUnkVsQDxg0AxtSiU90Jdw"><label data-page-node-id="lbYE5uOg75N4at4wH5muxo">不透明度</label><input type="range" id="s-opacity" min="1" max="100" value="100" data-page-node-id="EFUYdeM4YbH6aOS8wCrlMd"><span class="val" id="s-opacity-val" data-page-node-id="TDr5uKk398fMG2wI3Toowe">100%</span></div>
+        <div class="field" data-page-node-id="iLNQpXPkkKsh9LZryrsaHh"><label data-page-node-id="N1GUZaRbWgXvNdPLKjBfTC">流量</label><input type="range" id="s-flow" min="1" max="100" value="100" data-page-node-id="nAJLETzAn4lYa6KKBNoDOV"><span class="val" id="s-flow-val" data-page-node-id="Rmvad2IQ7eFUHPfm6R10O5">100%</span></div>
+        <div class="field" data-page-node-id="hYFMLYLHty48ayOIGEy1H9"><label data-page-node-id="WiFrJfzgeUe3hhz7pdIDym">硬度</label><input type="range" id="s-hardness" min="0" max="100" value="75" data-page-node-id="OyEwIXlBGKiQOVqkL3JRYS"><span class="val" id="s-hardness-val" data-page-node-id="3WQrCgqxpbh9vuopP6tVPs">75%</span></div>
+        <div class="field" data-page-node-id="tR2rm8Joc7TMWxkd5xKAFr"><label data-page-node-id="anDbYWgo2gn2txMLjmuTf1">间距</label><input type="range" id="s-spacing" min="2" max="80" value="12" data-page-node-id="q7PJVDDH6rcudueDnOoCSD"><span class="val" id="s-spacing-val" data-page-node-id="lo6wECSg933rDAkSa0rDdD">12%</span></div>
+        <div class="field" data-page-node-id="LGmrGDFYgyShTSdjSTaCA2"><label data-page-node-id="5CADGbIXCFeSyzs8NNzp2k">抖动修正</label><input type="range" id="s-smoothing" min="0" max="90" value="25" data-page-node-id="b0H9UO6n1IIDFYXKfPuuBO"><span class="val" id="s-smoothing-val" data-page-node-id="rglYgaEoxbMthYhcEtqt23">25%</span></div>
+        <div class="checks" data-page-node-id="waL14DFWcohbQCPMgFV7Iv">
+          <label data-page-node-id="xnDxyxLFgvySkjAfUrCcUJ"><input type="checkbox" id="s-pressure-size" checked data-page-node-id="KkRTvumh8AFtnNN0hbPVYL">压感控制大小</label>
+          <label data-page-node-id="ETOKRxhBUPEtDGVHpsUggx"><input type="checkbox" id="s-pressure-flow" data-page-node-id="zUDacepkMcCbQ3y18UNolx">压感控制流量</label>
+        </div>
+        <div id="tool-options" data-page-node-id="AvAv0ilXXZZ07mgzXAtiKj"></div>
+      </section>
+
+      <section class="panel" data-page-node-id="nAjWF3kcgGd8WYZKfIUYOZ">
+        <h3 data-page-node-id="bNf9EQI05BmgvYj1RFzgyu">图层 <span class="hint-text" id="layer-count" data-page-node-id="lKoN5agbOqJuXkWLEOuLdY"></span></h3>
+        <div class="layer-list" id="layer-list" data-page-node-id="9jpweU7DfjSVoe4FR3uBeZ"></div>
+        <div class="layer-actions" data-page-node-id="HB5DnoemYXT8ekXyxdAIzv">
+          <button class="btn icon" id="layer-add" title="新建图层 (Ctrl+Shift+N)" data-page-node-id="6bq6AKtd915JiaCdhLDVu1">
+            <svg viewBox="0 0 24 24" data-page-node-id="PN3B0vThScrwGjvVKIJjWL"><path d="M12 5v14M5 12h14" data-page-node-id="5ouQD3oxYmdd6jUWffNbeh"/></svg></button>
+          <button class="btn icon" id="layer-dup" title="复制图层" data-page-node-id="r2MKKm50LU4y1bVXEWYQAW">
+            <svg viewBox="0 0 24 24" data-page-node-id="opg5SBH1ySPPqW3MYMr3aK"><rect x="9" y="9" width="11" height="11" rx="2" data-page-node-id="q8UHJAj75M27PANVjWlSvL"/><path d="M5 15V6a2 2 0 0 1 2-2h9" data-page-node-id="tlAhqxmvUbTmXiJuMwCT5R"/></svg></button>
+          <button class="btn icon" id="layer-up" title="上移一层" data-page-node-id="TCz2Ksclz3RYAzi0H6dpQT">
+            <svg viewBox="0 0 24 24" data-page-node-id="5tpkut0o0EKOsM2ZBI630t"><path d="M12 19V5M5 12l7-7 7 7" data-page-node-id="jAgXjrRiVyi3Oi2opk08kh"/></svg></button>
+          <button class="btn icon" id="layer-down" title="下移一层" data-page-node-id="uUwvvRgVxjBEfUppjRUC7S">
+            <svg viewBox="0 0 24 24" data-page-node-id="hCNfVemVnhtgFOQVAIKqnp"><path d="M12 5v14M5 12l7 7 7-7" data-page-node-id="gRJuZ8pImSWTkFVYJy13fU"/></svg></button>
+          <button class="btn icon" id="layer-merge" title="向下合并 (Ctrl+E)" data-page-node-id="NkFPTnShaK2HOchGH8eXCn">
+            <svg viewBox="0 0 24 24" data-page-node-id="T5pkL4eVVBTCKkTMELA0TG"><path d="M12 4v10M8 10l4 4 4-4" data-page-node-id="pcpDdQfOnaBquRczhQYFhA"/><path d="M4 18h16" data-page-node-id="FlgyfWBpbZoO1ObCgTC7CQ"/></svg></button>
+          <button class="btn icon" id="layer-del" title="删除图层" data-page-node-id="29uameCQxEBLP1jnNNigIA">
+            <svg viewBox="0 0 24 24" data-page-node-id="5AYo3NDod4FGnfTCEMxzGL"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13" data-page-node-id="50HZ2Y76dBspms0gl3OWzj"/></svg></button>
+        </div>
+        <div class="field" data-page-node-id="9F0NVsciEWUhFRssDA6I0E"><label data-page-node-id="1F5xNgcHotkSQ9LdCuuC5f">不透明度</label><input type="range" id="l-opacity" min="0" max="100" value="100" data-page-node-id="JsClVFOl9ozTljctGnx1mS"><span class="val" id="l-opacity-val" data-page-node-id="NeEGZPWSX9Z6WcwkAGJFpI">100%</span></div>
+        <div class="field" data-page-node-id="K11O6EFWE5JETeTi0KwLwU"><label data-page-node-id="mCR6XzFoobqyQY6CIBbN96">混合</label><select id="l-blend" data-page-node-id="cd1IbMB6A5uiQ58hJVAizZ"></select><span class="val" data-page-node-id="QW8vfBFAgtYIlisL0DvG2S"></span></div>
+        <div class="btn-row" data-page-node-id="sXCgIzno7LxffrjSk5Usvd">
+          <button class="btn wide" id="btn-split-color" title="按颜色把画面拆分成多个图层" data-page-node-id="gWeiddaz6wQCB8ki4IRZXC">按颜色分层…</button>
+          <button class="btn wide" id="btn-merge-visible" title="把所有可见图层合并为一个" data-page-node-id="mNXg8dY52mXFBvwsCuzSsn">合并可见</button>
+        </div>
+        <div class="opt-note" style="margin-top:8px" data-page-node-id="zPewCLc7blsDATBK9dSdhF">提示：在图层列表里按住拖拽即可调整层序。</div>
+      </section>
+
+      <section class="panel" data-page-node-id="iIUhttIpk3Faa5L8uXRKMa">
+        <h3 data-page-node-id="hTcdssjRj7NFdN2MfTJlot">数位板 / 触摸</h3>
+        <div class="field" data-page-node-id="vJGLirOqtSrVVylIznxgoa"><label data-page-node-id="MDCPofdP4ggbMCVkNa3jWn">压感曲线</label><input type="range" id="t-curve" min="40" max="260" value="100" data-page-node-id="7WbmYOz2jBKGmM46C41nm1"><span class="val" id="t-curve-val" data-page-node-id="m7G5i80AOs9hEymyljs7Eb">1.00</span></div>
+        <div class="field" data-page-node-id="ddoZWQ0KvTY4SyEHhMj7oL"><label data-page-node-id="y8FpfYCrHmDjXH32bqArGB">起始压感</label><input type="range" id="t-min" min="0" max="60" value="12" data-page-node-id="7LOMIEpBFtc1Li3x5Ty4en"><span class="val" id="t-min-val" data-page-node-id="wLqiGbopVsGsFeLFmiJ2cQ">12%</span></div>
+        <div class="field" data-page-node-id="gYHO5GieNx7eLwvXFWlFAo"><label data-page-node-id="W568GdChwbvrGyKSBtkiXu">倾斜影响</label><input type="range" id="t-tilt" min="0" max="100" value="45" data-page-node-id="lcQcq5cIpNU4ZKYDTBzUOQ"><span class="val" id="t-tilt-val" data-page-node-id="8yNmmQ1VYAhGsc6HVhEWA3">45%</span></div>
+        <div class="checks" data-page-node-id="EYDIbaTJhDa16rg0Dfj1MS">
+          <label data-page-node-id="5NpSyjcYAlSCaGqplwYYqa"><input type="checkbox" id="t-tilt-on" checked data-page-node-id="RdL0XMGriBuCQ4ptQxnHTf">笔倾斜改变笔刷角度</label>
+          <label data-page-node-id="RLGHFolg9GZuJlA73y6zWE"><input type="checkbox" id="t-pinch" checked data-page-node-id="FQEhFfoLlA7gyKhAxwq7I9">双指缩放 / 平移画布</label>
+          <label data-page-node-id="mJAvDRHFuMdRmmeJNtFVBR"><input type="checkbox" id="t-three" checked data-page-node-id="YRtuosrPKdE82g2hN0GMBb">三指擦除（橡皮擦）</label>
+        </div>
+        <div class="opt-note" style="margin-top:8px" data-page-node-id="dMbaOh0Ofe6fzA3I9aVSVQ">支持压感笔（含笔尾橡皮）、倾斜识别与合并事件采样；用笔时自动忽略手掌误触。曲线值 &lt;1 更省力、&gt;1 更细腻。</div>
+      </section>
+
+      <section class="panel" id="panel-history" data-page-node-id="LTdTSrCJZr84cs3NWmne7J">
+        <h3 data-page-node-id="RKB1BZ1wCVyCF4gxn1D9ne">历史记录 <span class="hint-text" data-page-node-id="7iSlJ0tcft6iEWjQcrR6Dz">点任意一步即可跳转</span></h3>
+        <div class="hist-list" id="history-list" data-page-node-id="mDrKIaVnADEmNDx9X1L34u"></div>
+        <div class="btn-row" data-page-node-id="9gymuQ2lH2dNcpHHtzhQju">
+          <button class="btn wide" id="hist-undo" title="上一步 (Ctrl+Z)" data-page-node-id="cWWbBpSfz9vfGwTmmu3gDn">← 上一步</button>
+          <button class="btn wide" id="hist-redo" title="下一步 (Ctrl+Shift+Z)" data-page-node-id="6c673BpRk1YQuhdF1WbCSV">下一步 →</button>
+        </div>
+        <div class="opt-note" style="margin-top:8px" data-page-node-id="BpZ1mY2ZBQ8WmyRgwmkbPB">最多保留 80 步；像素级历史只存脏矩形，长笔触也不吃内存。</div>
+      </section>
+
+      <section class="panel" id="panel-plugins" data-page-node-id="SZHEbELc8xRzWIL0BD3dN4">
+        <h3 data-page-node-id="G18K6LxNLASZawmDIqNAHz">滤镜插件 <span class="hint-text" id="plugin-count" data-page-node-id="GrXG0jCrH1KGnR1XXXFMNu">0 个</span></h3>
+        <div class="plugin-list" id="plugin-list" data-page-node-id="LgBrKwNTpU6cLnvk7ptqoo"></div>
+        <div class="btn-row" data-page-node-id="Af9FIBWHqUSSK3CaXYPH6b">
+          <button class="btn wide" id="btn-plugin-file" data-page-node-id="iY5z2k0XnCLrWEEdlEBvK4">从文件安装…</button>
+          <button class="btn wide" id="btn-plugin-paste" data-page-node-id="4nsDeOoUPySDptmolrOfqG">粘贴代码安装…</button>
+          <button class="btn wide" id="btn-plugin-example" data-page-node-id="hukDFojWkthDS26hVgb07W">示例插件库…</button>
+          <button class="btn wide" id="btn-plugin-export" data-page-node-id="tsf6Se37VQJG4Dqsfb1NOB">导出全部插件</button>
+        </div>
+        <input type="file" id="plugin-file" accept=".js,.json,text/javascript,application/json" multiple hidden data-page-node-id="tBAX81JTHZ0hMyyh9hvmtB">
+        <div class="opt-note" style="margin-top:8px" data-page-node-id="vZJ2eQRdb49C8GAGssjHyI">插件可注册滤镜、调整、菜单项与工具。安装后立刻出现在「滤镜 / 调整」菜单与滤镜库中。详见「帮助 → 插件开发指南」。</div>
+      </section>
+
+    </aside>
+  </main>
+
+  <footer class="statusbar" data-page-node-id="pe3KhaT0uz2KoroAsiomWG">
+    <span id="status-tool" data-page-node-id="7mDcWCu6v3zb9FB4bqC55T">画笔</span>
+    <span class="dot" data-page-node-id="eyIhCs9I56SYbs2DyOCjJd"></span>
+    <span id="status-message" data-page-node-id="GF5GDopGwtjFTe9bR7VxwN">就绪</span>
+    <span class="spacer" data-page-node-id="gw9rKXzq9kyP204kRZ8UFP"></span>
+    <span id="status-pos" data-page-node-id="DekgLSu4Z3yHJOAn9M7HYW">— , —</span>
+    <span class="dot" data-page-node-id="u4K7pnH8yKy5JYBKEznG7J"></span>
+    <span id="status-doc" data-page-node-id="TkAFTwf6DeVsSje97SB680">1280 × 800</span>
+    <span class="dot" data-page-node-id="sOmRVjBF3xVjEDFZ6tzuDg"></span>
+    <span id="status-layers" data-page-node-id="5MNHUkdZNz3KsArXjRTJAR">1 图层</span>
+  </footer>
+</div>
+
+<div class="modal-backdrop" id="modal-backdrop" hidden data-page-node-id="wf8jXDPzHu3IZ1ar8pfs4y"><div class="modal" id="modal" data-page-node-id="896gthZTlhupm5CTKQiAxD"></div></div>
+
+<script src="js/engine.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/tools2.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/filters-lib.js"></script>
+<script src="js/adjustments.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/studio.js"></script>
+</body>
+</html>
