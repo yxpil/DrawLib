@@ -1,0 +1,10 @@
+{
+  "name": "drawlib",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DrawLib — 浏览器端图像编辑引擎",
+  "scripts": {
+    "test": "node --test --test-force-exit tests/"
+  },
+  "license": "MIT"
+}
