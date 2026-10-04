@@ -76,3 +76,15 @@ js/menu.js          菜单栏 / 图像操作 / 历史面板
 js/studio.js        四期功能统一接线
 plugins/            示例插件
 ```
+
+---
+
+<div align="center">
+
+<a href="https://github.com/yxpil/DrawLib">
+  <img width="100%" src="https://alittlecatgirlpanel.yxp.hk/card?repo=yxpil/DrawLib" alt="gh-card · yxpil/DrawLib" />
+</a>
+
+<sub>Powered by <a href="https://alittlecatgirlpanel.yxp.hk"><b>gh-card</b></a> · 粉色手写体 README 仓库名片</sub>
+
+</div>
