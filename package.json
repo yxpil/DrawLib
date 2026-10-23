@@ -4,7 +4,7 @@
   "private": true,
   "description": "DrawLib — 浏览器端图像编辑引擎",
   "scripts": {
-    "test": "node --test --test-force-exit tests/"
+    "test": "node --test --test-force-exit \"tests/**/*.test.js\""
   },
   "license": "MIT"
 }
